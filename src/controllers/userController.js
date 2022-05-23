@@ -115,7 +115,7 @@ const Validator= require("../validator/validation")
 const loginUser = async function (req, res) {
     try {
     let body = req.body
-    if (Object.keys(body) != 0) {
+    if (Object.keys(body).length != 0) {
     let userName = req.body.email;
     let passwords = req.body.password; 
     if (!(/^\w+([\.-]?\w+)@\w+([\. -]?\w+)(\.\w{2,3})+$/.test(userName))) { return res.status(400).send({ status: false, msg: "Please provide a valid email" }) }
